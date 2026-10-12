@@ -391,7 +391,7 @@ def evidencia(raw: bytes, nome_arquivo: str, p: Parametros, n_linhas: int) -> di
     exec_id = hashlib.sha256((h + params_json + VERSAO).encode()).hexdigest()[:12].upper()
     agora = datetime.now(timezone(timedelta(hours=-3))).strftime("%d/%m/%Y %H:%M:%S (BRT)")
     return {"ID da execução": exec_id, "Arquivo": nome_arquivo, "SHA-256 do arquivo": h,
-            "Linhas analisadas": n_linhas, "Executado em": agora, "Versão do motor": VERSAO,
+            "Linhas analisadas": n_linhas, "Executado em": agora, "Versão da análise": VERSAO,
             "Parâmetros": params_json}
 
 
@@ -454,7 +454,7 @@ def analisar_arquivo(raw: bytes, nome: str = "arquivo.csv", p: Parametros | None
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(description="Motor de Auditoria Contínua")
+    ap = argparse.ArgumentParser(description="Auditoria Contínua")
     ap.add_argument("arquivo", help="CSV de lançamentos")
     ap.add_argument("-o", "--saida", default="resultado_auditoria.xlsx")
     ap.add_argument("--alcada", type=float, default=10000.0)
