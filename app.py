@@ -1,5 +1,5 @@
 """
-app.py - Interface Streamlit do Monitor de Riscos Contínuos & Fraudes.
+app.py - Interface Streamlit do Faro | Monitor de Riscos Contínuos & Fraudes.
 Execute com:  streamlit run app.py
 """
 import json
@@ -12,7 +12,7 @@ import gerador
 import motor
 from motor import ROTULOS, Parametros, brl
 
-st.set_page_config(page_title="Monitor de Riscos Contínuos & Fraudes", page_icon="🛡️", layout="wide")
+st.set_page_config(page_title="Faro | Auditoria contínua", page_icon="🛡️", layout="wide")
 
 
 # ---------------------------------------------------------------------------
@@ -33,7 +33,7 @@ def rodar(raw: bytes, nome: str, params_json: str) -> dict:
 # ---------------------------------------------------------------------------
 # Cabeçalho: o que é, em 10 segundos
 # ---------------------------------------------------------------------------
-st.title("🛡️ Monitor de Riscos Contínuos & Fraudes")
+st.title("🔎 Faro")
 st.markdown(
     "Testa 100% dos seus lançamentos contábeis (e não uma amostra) com regras de auditoria + Machine Learning, "
     "aponta *o que* é suspeito e *por quê*, e entrega o papel de trabalho com evidência pronta para a auditoria."
